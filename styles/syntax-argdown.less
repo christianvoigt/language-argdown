@@ -1,6 +1,7 @@
 @import "syntax-variables";
 
-@title-color : #0582CA;
+@statement-color : #76BAE2;
+@argument-color : #0582CA;
 @support-color: #04C93F;
 @attack-color: #C93504;
 @heading-color: #7D04C9;
@@ -26,10 +27,14 @@ atom-text-editor::shadow{
   }
   .statement-title.argdown{
     font-weight:bold;
-    color:@title-color;
+    color:@statement-color;
     .begin,.end{
     }
     .name{
     }
+  }
+  .argument-title.argdown{
+    color:@argument-color;
+    font-weight:bold;
   }
 }
