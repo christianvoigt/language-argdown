@@ -1,0 +1,17 @@
+{
+  "name": "language-argdown",
+  "version": "0.0.0",
+  "description": "Argdown language support in Atom",
+  "engines": {
+    "atom": "*"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christianvoigt/language-argdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/christianvoigt/language-argdown/issues"
+  },
+  "license": "MIT"
+}

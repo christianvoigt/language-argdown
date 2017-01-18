@@ -1,0 +1,35 @@
+@import "syntax-variables";
+
+@title-color : #0582CA;
+@support-color: #04C93F;
+@attack-color: #C93504;
+@heading-color: #7D04C9;
+
+
+
+atom-text-editor::shadow{
+  .scroll-view{
+    max-width: 30em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin: 0 auto;
+  }
+  .support.argdown{
+    color:@support-color;
+  }
+  .attack.argdown{
+    color:@attack-color;
+  }
+  .heading.argdown{
+    font-weight:bold;
+    color:@heading-color;
+  }
+  .statement-title.argdown{
+    font-weight:bold;
+    color:@title-color;
+    .begin,.end{
+    }
+    .name{
+    }
+  }
+}
