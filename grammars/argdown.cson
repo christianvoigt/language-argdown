@@ -308,13 +308,13 @@
     'match': '^\\s*(\\d+\\.)[ \\t]+'
     'captures':
       '1':
-        'name': 'variable.ordered.list.argdown'
+        'name': 'variable.ordered.list.argument.pcs.reconstruction.argdown'
   }
   {
     'match': '^\\s*(\\(\\d+\\))[ \\t]+'
     'captures':
       '1':
-        'name': 'variable.ordered.list.argdown'
+        'name': 'variable.ordered.list.argument.statement-index.argdown'
   }
   {
     'match': '(?<=^|\\s|"|\'|\\(|\\[)(@)(\\w[-\\w:]*)(?=[\\s"\'.,;\\)\\]])'
@@ -339,6 +339,28 @@
     'name': 'comment.block.argdown'
   }
   {
+    'match': '(?<=^|\\s)(\\[\\*)([^\\[\\]]+)(\\*\\]:)(?=\\s)'
+    'name': 'argument-title.definition.argdown'
+    'captures':
+      '1':
+        'name': 'punctuation.definition.begin.argdown'
+      '2':
+        'name': 'entity.name.argument.argdown'
+      '3':
+        'name': 'punctuation.definition.end.argdown'
+  }
+  {
+    'match': '(?<=^|\\s)(\\[\\*)([^\\[\\]]+)(\\*\\]\\s*$)'
+    'name': 'argument-title.reference.argdown'
+    'captures':
+      '1':
+        'name': 'punctuation.definition.begin.argdown'
+      '2':
+        'name': 'entity.name.argument.argdown'
+      '3':
+        'name': 'punctuation.definition.end.argdown'
+  }
+  {
     'match': '(?<=^|\\s)(\\[)([^\\[\\]]+)(\\]:)(?=\\s)'
     'name': 'statement-title.definition.argdown'
     'captures':
@@ -361,25 +383,18 @@
         'name': 'punctuation.definition.end.argdown'
   }
   {
-    'match': '(?<=^|\\s)(\\<)([^\\[\\]]+)(\\>:)(?=\\s)'
-    'name': 'argument-title.definition.argdown'
-    'captures':
-      '1':
-        'name': 'punctuation.definition.begin.argdown'
-      '2':
-        'name': 'entity.name.argument.argdown'
-      '3':
-        'name': 'punctuation.definition.end.argdown'
-  }
-  {
-    'match': '(?<=^|\\s)(\\[\\*)([^\\[\\]]+)(\\*\\]\\s*$)'
-    'name': 'argument-title.reference.argdown'
-    'captures':
-      '1':
-        'name': 'punctuation.definition.begin.argdown'
-      '2':
-        'name': 'entity.name.argument.argdown'
-      '3':
-        'name': 'punctuation.definition.end.argdown'
+    'begin': '(?<=^)\\s*\\-\\-\\s*'
+    'end': '\\s*\\-\\-\\-*\\s*(?=$|[^\\w|\\d])'
+    'name': 'inference.argdown'
+    'patterns': [
+      {
+        'match': '\\(.+\\)'
+        'name': 'inference.meta.argdown'
+      }
+      {
+        'match': '[\\w\\s]+,?'
+        'name': 'inference-rule.argdown'
+      }
+    ]
   }
 ]

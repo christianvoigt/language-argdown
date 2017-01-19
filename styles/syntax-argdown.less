@@ -5,6 +5,7 @@
 @support-color: #04C93F;
 @attack-color: #C93504;
 @heading-color: #7D04C9;
+@inference-color:#0582CA;
 
 
 
@@ -36,5 +37,16 @@ atom-text-editor{
   .syntax--argument-title.syntax--argdown{
     color:@argument-color;
     font-weight:bold;
+  }
+  .syntax--statement-index{
+    color:@argument-color;
+  }
+  .syntax--inference.syntax--argdown{
+    color: @inference-color;
+  }
+  .syntax--inference.syntax--meta.syntax--argdown{
+    color: @statement-color;
+  }
+  .syntax--inference-rule.syntax--argdown{
   }
 }
