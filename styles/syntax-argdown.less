@@ -1,4 +1,4 @@
-@import "syntax-variables";
+// @import "syntax-variables";
 
 @statement-color : #76BAE2;
 @argument-color : #0582CA;
@@ -8,32 +8,32 @@
 
 
 
-atom-text-editor::shadow{
-  .scroll-view{
-    max-width: 30em;
-    padding-left: 2em;
-    padding-right: 2em;
-    margin: 0 auto;
-  }
-  .support.argdown{
+atom-text-editor{
+  // .scroll-view{
+  //   max-width: 30em;
+  //   padding-left: 2em;
+  //   padding-right: 2em;
+  //   margin: 0 auto;
+  // }
+  .syntax--support.syntax--argdown{
     color:@support-color;
   }
-  .attack.argdown{
+  .syntax--attack.syntax--argdown{
     color:@attack-color;
   }
-  .heading.argdown{
+  .syntax--heading.syntax--argdown{
     font-weight:bold;
     color:@heading-color;
   }
-  .statement-title.argdown{
+  .syntax--statement-title.syntax--argdown{
     font-weight:bold;
     color:@statement-color;
-    .begin,.end{
+    .syntax--begin,.syntax--end{
     }
-    .name{
+    .syntax--name{
     }
   }
-  .argument-title.argdown{
+  .syntax--argument-title.syntax--argdown{
     color:@argument-color;
     font-weight:bold;
   }
