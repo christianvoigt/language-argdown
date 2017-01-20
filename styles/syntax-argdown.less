@@ -1,4 +1,4 @@
-// @import "syntax-variables";
+@import "syntax-variables";
 
 @statement-color : #76BAE2;
 @argument-color : #0582CA;
@@ -54,5 +54,30 @@ atom-text-editor{
     color: @statement-color;
   }
   .syntax--inference-rule.syntax--argdown{
+  }
+}
+//from https://github.com/braver/typewriter/blob/master/styles/typewriter.less
+
+.item-views {
+  background: @syntax-background-color !important;
+}
+
+[data-argdown="true"] {
+  max-width: 100%;
+  margin: 0 auto;
+
+  & {
+    .gutter {
+      display: none;
+    }
+    .editor--private {
+      .vertical-scrollbar {
+        opacity: 0;
+        transition: opacity .2s .1s;
+      }
+      &:hover .vertical-scrollbar {
+        opacity: 1;
+      }
+    }
   }
 }

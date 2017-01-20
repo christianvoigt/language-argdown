@@ -1,11 +1,14 @@
 {
   "name": "language-argdown",
   "version": "0.0.0",
+  "main": "./lib/argdown",
   "description": "Argdown language support in Atom",
   "engines": {
     "atom": "*"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "2.x.x"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/christianvoigt/language-argdown.git"
