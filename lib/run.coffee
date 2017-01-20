@@ -8,13 +8,12 @@ module.exports =
 
       if editor isnt undefined # e.g. settings-view
         currentScope = editor.getRootScopeDescriptor().scopes[0]
-        console.log(currentScope)
         if currentScope in scopes
 
           characterWidth = editor.getDefaultCharWidth()
           charactersPerLine = atom.config.get('editor.preferredLineLength', scope: [currentScope])
 
-          atom.config.set('editor.softWrap', true, scopeSelector: currentScope)
+          atom.config.set('editor.softWrap', true, scope: [currentScope])
           atom.views.getView(editor).style.maxWidth = characterWidth * (charactersPerLine + 4) + 'px'
           atom.views.getView(editor).style.paddingLeft = characterWidth * 2 + 'px'
           atom.views.getView(editor).style.paddingRight = characterWidth * 2 + 'px'
