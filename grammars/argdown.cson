@@ -349,8 +349,30 @@
       '3':
         'name': 'punctuation.definition.end.argdown'
   }
+    {
+      'match': '(?<=^|\\s)(\\<)([^\\[\\]]+)(\\>:)(?=\\s)'
+      'name': 'argument-title.definition.argdown'
+      'captures':
+        '1':
+          'name': 'punctuation.definition.begin.argdown'
+        '2':
+          'name': 'entity.name.argument.argdown'
+        '3':
+          'name': 'punctuation.definition.end.argdown'
+    }
   {
     'match': '(?<=^|\\s)(\\[\\*)([^\\[\\]]+)(\\*\\]\\s*$)'
+    'name': 'argument-title.reference.argdown'
+    'captures':
+      '1':
+        'name': 'punctuation.definition.begin.argdown'
+      '2':
+        'name': 'entity.name.argument.argdown'
+      '3':
+        'name': 'punctuation.definition.end.argdown'
+  }
+  {
+    'match': '(?<=^|\\s)(\\<)([^\\[\\]]+)(\\>\\s*$)'
     'name': 'argument-title.reference.argdown'
     'captures':
       '1':
