@@ -281,7 +281,7 @@
         'name': 'variable.unordered.list.argdown'
   }
   {
-    'match': '^\\s*(\\+)[ \\t]+'
+    'match': '^\\s*(\\<?\\+)[ \\t]+'
     'captures':
       '1':
         'name': 'variable.unordered.list.support.outgoing.argdown'
@@ -293,7 +293,7 @@
         'name': 'variable.unordered.list.support.incoming.argdown'
   }
   {
-    'match': '^\\s*(-)[ \\t]+'
+    'match': '^\\s*(\\<?-)[ \\t]+'
     'captures':
       '1':
         'name': 'variable.unordered.list.attack.outgoing.argdown'
