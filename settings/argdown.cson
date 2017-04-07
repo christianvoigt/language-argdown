@@ -1,0 +1,5 @@
+'.source.argdown:not(.markup.code)':
+  'editor':
+    'softWrap': true
+    'commentStart': '<!-- '
+    'commentEnd': ' -->'
