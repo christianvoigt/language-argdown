@@ -159,6 +159,12 @@
       }
     ]
   }
+  #Tags
+  {
+    'begin': '#(?:\\([^\\)]+\\)|[\\w-]+)'
+    'end': '[ \\t$]'
+    'name': 'markup.tag.argdown'
+  }
   #links (gfm.cson)
   {
     'match': '(\\[!)(\\[)([^\\]]*)(\\])((\\()[^\\)]+(\\)))(\\])(((\\()[^\\)]+(\\)))|((\\[)[^\\]]+(\\])))'
@@ -304,6 +310,18 @@
       '1':
         'name': 'variable.unordered.list.attack.incoming.argdown'
   }
+  {
+    'match': '^\\s*(\\<_)[ \\t]+'
+    'captures':
+      '1':
+        'name': 'variable.unordered.list.undercut.outgoing.argdown'
+  }
+  {
+    'match': '^\\s*(_\\>)[ \\t]+'
+    'captures':
+      '1':
+        'name': 'variable.unordered.list.undercut.incoming.argdown'
+  }  
   {
     'match': '^\\s*(\\d+\\.)[ \\t]+'
     'captures':
