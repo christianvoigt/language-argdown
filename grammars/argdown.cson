@@ -311,6 +311,12 @@
         'name': 'variable.unordered.list.attack.incoming.argdown'
   }
   {
+    'match': '^\\s*(\\>\\<)[ \\t]+'
+    'captures':
+      '1':
+        'name': 'variable.unordered.list.contradiction.outgoing.argdown'
+  }
+  {
     'match': '^\\s*(\\<_)[ \\t]+'
     'captures':
       '1':
@@ -356,19 +362,8 @@
     'end': '--\\s*>'
     'name': 'comment.block.argdown'
   }
-  {
-    'match': '(?<=^|\\s)(\\[\\*)([^\\[\\]]+)(\\*\\]:)(?=\\s)'
-    'name': 'argument-title.definition.argdown'
-    'captures':
-      '1':
-        'name': 'punctuation.definition.begin.argdown'
-      '2':
-        'name': 'entity.name.argument.argdown'
-      '3':
-        'name': 'punctuation.definition.end.argdown'
-  }
     {
-      'match': '(?<=^|\\s)(\\<)([^\\[\\]]+)(\\>:)(?=\\s)'
+      'match': '(?=(^|\\s)*)(<)([^<>]+)(>:)(?=\\s*)'
       'name': 'argument-title.definition.argdown'
       'captures':
         '1':
@@ -379,7 +374,7 @@
           'name': 'punctuation.definition.end.argdown'
     }
   {
-    'match': '(?<=^|\\s)(\\[\\*)([^\\[\\]]+)(\\*\\]\\s*$)'
+    'match': '(?=(^|\\s)*)(<)([^<>]+)(>)(?=\\s*)'
     'name': 'argument-title.reference.argdown'
     'captures':
       '1':
@@ -390,18 +385,7 @@
         'name': 'punctuation.definition.end.argdown'
   }
   {
-    'match': '(?<=^|\\s)(\\<)([^\\[\\]]+)(\\>\\s*$)'
-    'name': 'argument-title.reference.argdown'
-    'captures':
-      '1':
-        'name': 'punctuation.definition.begin.argdown'
-      '2':
-        'name': 'entity.name.argument.argdown'
-      '3':
-        'name': 'punctuation.definition.end.argdown'
-  }
-  {
-    'match': '(?<=^|\\s)(\\[)([^\\[\\]]+)(\\]:)(?=\\s)'
+    'match': '(?=(^|\\s)*)(\\[)([^\\[\\]]+)(\\]:)(?=\\s)'
     'name': 'statement-title.definition.argdown'
     'captures':
       '1':
@@ -412,7 +396,7 @@
         'name': 'punctuation.definition.end.argdown'
   }
   {
-    'match': '(?<=^|\\s)(\\[)([^\\[\\]]+)(\\]\\s*$)'
+    'match': '(?=(^|\\s)*)(\\[)([^\\[\\]]+)(\\])(?=\\s*)'
     'name': 'statement-title.reference.argdown'
     'captures':
       '1':
