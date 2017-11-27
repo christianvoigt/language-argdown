@@ -1,6 +1,6 @@
 {
   "name": "language-argdown",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "./lib/argdown",
   "description": "Argdown language support in Atom",
   "engines": {
