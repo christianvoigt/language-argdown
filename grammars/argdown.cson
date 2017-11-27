@@ -3,12 +3,17 @@
 'fileTypes': ['ad', 'argdown']
 
 'patterns': [
+  #escape characters
+  {
+    "match": "\\\\."
+    "name": "html.text.argdown"
+  }
   #bold & italic (from gfm.cson)
   {
     'begin': '(?<=^|[^\\w\\d\\*])\\*\\*(?!$|\\*|\\s)'
     'end': '(?<!^|\\s)\\*\\**\\*(?=$|[^\\w|\\d])'
     'name': 'markup.bold.argdown'
-    'patterns': [
+    'patterns': [      
       {
         'match': '(&)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)'
         'name': 'constant.character.entity.argdown'
@@ -200,57 +205,7 @@
         'name': 'punctuation.definition.end.argdown'
   }
   {
-    'match': '(\\[!)(\\[)([^\\]]*)(\\])((\\[)[^\\)]+(\\]))(\\])(((\\()[^\\)]+(\\)))|((\\[)[^\\]]+(\\])))'
-    'name': 'link'
-    'captures':
-      '1':
-        'name': 'punctuation.definition.begin.argdown'
-      '2':
-        'name': 'punctuation.definition.begin.argdown'
-      '3':
-        'name': 'entity.argdown'
-      '4':
-        'name': 'punctuation.definition.end.argdown'
-      '5':
-        'name': 'markup.underline.link.argdown'
-      '6':
-        'name': 'punctuation.definition.begin.argdown'
-      '7':
-        'name': 'punctuation.definition.end.argdown'
-      '8':
-        'name': 'punctuation.definition.end.argdown'
-      '10':
-        'name': 'markup.underline.link.argdown'
-      '11':
-        'name': 'punctuation.definition.begin.argdown'
-      '12':
-        'name': 'punctuation.definition.end.argdown'
-      '13':
-        'name': 'markup.underline.link.argdown'
-      '14':
-        'name': 'punctuation.definition.begin.argdown'
-      '15':
-        'name': 'punctuation.definition.end.argdown'
-  }
-  {
     'match': '!?(\\[)([^\\]]*)(\\])((\\()[^\\)]+(\\)))'
-    'name': 'link'
-    'captures':
-      '1':
-        'name': 'punctuation.definition.begin.argdown'
-      '2':
-        'name': 'entity.argdown'
-      '3':
-        'name': 'punctuation.definition.end.argdown'
-      '4':
-        'name': 'markup.underline.link.argdown'
-      '5':
-        'name': 'punctuation.definition.begin.argdown'
-      '6':
-        'name': 'punctuation.definition.end.argdown'
-  }
-  {
-    'match': '!?(\\[)([^\\]]*)(\\])((\\[)[^\\]]*(\\]))'
     'name': 'link'
     'captures':
       '1':
@@ -354,8 +309,28 @@
     'end': '--\\s*>'
     'name': 'comment.block.argdown'
   }
+  {
+    "begin": "\\/\\*"
+    "captures": {
+      "0": {
+        "name": "punctuation.definition.comment.argdown"
+      }
+    },
+    "end": "\\*\\/"
+    "name": "comment.block.argdown"
+  }
+  {
+    "begin": "\\/\\/"
+    "captures": {
+      "0": {
+        "name": "punctuation.definition.comment.argdown"
+      }
+    }
+    "end": "(?:\\n|\\r|\\r\\n|$)"
+    "name": "comment.block.argdown"
+  }  
     {
-      'match': '(?=(^|\\s)*)(@<)([^<>]+)(>)(?=\\s*)'
+      'match': '(?<=^|\\s)(@<)([^<>]+)(>)(?=\\s*)'
       'name': 'argument-title.mention.argdown'
       'captures':
         '1':
@@ -366,7 +341,7 @@
           'name': 'punctuation.definition.end.argdown'
     }
     {
-      'match': '(?=(^|\\s)*)(<)([^<>]+)(>:)(?=\\s*)'
+      'match': '(?<=^|\\s)(<)([^<>]+)(>:)(?=\\s*)'
       'name': 'argument-title.definition.argdown'
       'captures':
         '1':
@@ -377,7 +352,7 @@
           'name': 'punctuation.definition.end.argdown'
     }
   {
-    'match': '(?=(^|\\s)*)(<)([^<>]+)(>)(?=\\s*)'
+    'match': '(?<=^|\\s)(<)([^<>]+)(>)(?=\\s*)'
     'name': 'argument-title.reference.argdown'
     'captures':
       '1':
@@ -388,7 +363,7 @@
         'name': 'punctuation.definition.end.argdown'
   }
   {
-    'match': '(?=(^|\\s)*)(@\\[)([^\\[\\]]+)(\\])(?=\\s)'
+    'match': '(?<=^|\\s)(@\\[)([^\\[\\]]+)(\\])(?=\\s)'
     'name': 'statement-title.definition.argdown'
     'captures':
       '1':
@@ -399,7 +374,7 @@
         'name': 'punctuation.definition.end.argdown'
   }
   {
-    'match': '(?=(^|\\s)*)(\\[)([^\\[\\]]+)(\\]:)(?=\\s)'
+    'match': '(?<=^|\\s)(\\[)([^\\[\\]]+)(\\]:)(?=\\s)'
     'name': 'statement-title.definition.argdown'
     'captures':
       '1':
@@ -410,7 +385,7 @@
         'name': 'punctuation.definition.end.argdown'
   }
   {
-    'match': '(?=(^|\\s)*)(\\[)([^\\[\\]]+)(\\])(?=\\s*)'
+    'match': '(?<=^|\\s)(\\[)([^\\[\\]]+)(\\])(?=\\s*)'
     'name': 'statement-title.reference.argdown'
     'captures':
       '1':
