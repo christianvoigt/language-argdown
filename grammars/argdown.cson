@@ -167,7 +167,7 @@
   #Tags
   {
     'begin': '#(?:\\([^\\)]+\\)|[\\w-]+)'
-    'end': '[ \\t$]'
+    'end': '[\\s*$]'
     'name': 'markup.tag.argdown'
   }
   #links (gfm.cson)
