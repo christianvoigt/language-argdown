@@ -7,7 +7,7 @@
     "atom": "*"
   },
   "dependencies": {
-    "jquery": "2.x.x"
+    "jquery": "3.x.x"
   },
   "repository": {
     "type": "git",
