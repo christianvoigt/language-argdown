@@ -4,7 +4,7 @@
 
 [Argdown](https://github.com/christianvoigt/argdown) syntax highlighting for the Atom editor.
 
-Automatically highlights files that have the .argdwon extension.
+Automatically highlights files that have the .argdown extension.
 
 For more Argdown tools and information about the Argdown syntax, please visit the [Argdown repository](https://github.com/christianvoigt/argdown).
 
